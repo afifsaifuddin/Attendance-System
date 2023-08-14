@@ -81,7 +81,7 @@ export default function DashBoardEmployee() {
       console.log(error);
     }
   };
-  // console.log("attendence", attendence);
+
   useEffect(() => {
     fetchHistory();
   }, [attendence]);

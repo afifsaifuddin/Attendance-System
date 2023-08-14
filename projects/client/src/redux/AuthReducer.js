@@ -20,7 +20,6 @@ const AuthReducer = createSlice({
   initialState,
   reducers: {
     setUser: (state, action) => {
-      console.log("action", action.payload);
       const { id, fullName, email, username, roleId, Role } = action.payload;
       state.user = { id, fullName, email, username, roleId, Role };
     },
@@ -36,7 +35,6 @@ const AuthReducer = createSlice({
     },
     setRole: (state, action) => {
       state.role = [...action.payload];
-      console.log("ROLE?", action.payload);
     },
   },
 });
@@ -81,7 +79,7 @@ export const loginAuth = (values, setLoading, toast, navigate) => {
       });
       navigate("/home");
     } catch (error) {
-      console.log("err reducer", error);
+      console.log("error reducer", error);
     } finally {
       setLoading(false);
     }
@@ -100,9 +98,7 @@ export const getRole = () => {
 };
 
 export const registEmployee = (values, setLoading, toast) => {
-  console.log("masuk");
   return async (dispatch) => {
-    console.log("regist", values);
     try {
       setLoading(true);
       const respon = await axios.post(
@@ -149,8 +145,6 @@ export const formEmployee = (values, setLoading, toast) => {
       setLoading(true);
       const url = window.location.href.split("/");
       const token = url.pop();
-      console.log("url employe", url);
-      console.log("token empo", token);
       const respon = await axios.patch(
         `${URL_API}/auth-management/`,
         {

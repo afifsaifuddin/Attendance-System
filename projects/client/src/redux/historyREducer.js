@@ -62,7 +62,7 @@ export const clockOut = (toast) => {
       );
       toast({
         title: "Clock Out Success",
-        description: "Thankyou for your hard work",
+        description: "Thankyou Brada",
         status: "success",
         duration: 3000,
         isClosable: true,
@@ -90,7 +90,6 @@ export const fetchHistory = () => {
           Authorization: `Bearer ${token}`,
         },
       });
-      console.log("respon", respon.data);
       dispatch(setHistory(respon.data.history));
     } catch (error) {
       console.log(error);

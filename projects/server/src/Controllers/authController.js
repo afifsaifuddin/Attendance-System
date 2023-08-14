@@ -42,7 +42,6 @@ const authController = {
         fullName: checkLogin.fullName,
         username: checkLogin.username,
       };
-      console.log("role", checkLogin.roleId);
       const token = jwt.sign(payload, process.env.JWT_KEY, { expiresIn: "3h" });
       checkLogin.isLogin = true;
       await checkLogin.save();

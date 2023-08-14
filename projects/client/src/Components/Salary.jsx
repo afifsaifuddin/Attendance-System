@@ -24,6 +24,8 @@ export default function Salary() {
         const response = await axios.get(
           `${URL_API}/auth-management/auth/account`
         );
+        console.log("API Response Data:", response.data.account);
+
         setUsers(response.data.account);
       } catch (error) {
         console.log(error);
@@ -31,7 +33,7 @@ export default function Salary() {
     };
     fetchData();
   }, []);
-  //  hjgj
+
   const getRoleName = (roleID) => {
     switch (roleID) {
       case 1:

@@ -1,7 +1,7 @@
 import { Box, Button, Flex, Stack } from "@chakra-ui/react";
 import React, { useState } from "react";
 import Welcome from "./welcome";
-import HistoryWork from "./HistoryWork";
+
 import DashBoardEmployee from "./DashBoardEmployee";
 import Navbar from "./Navbar";
 import { useSelector } from "react-redux";
@@ -17,7 +17,7 @@ export const Sidebar = () => {
         return <Welcome />;
       case "CheckIn & Out":
         return <DashBoardEmployee />;
-      case "history":
+      case "Salary":
         return <Salary />;
       default:
         return null;
@@ -50,9 +50,9 @@ export const Sidebar = () => {
             <Button
               _hover={{ bgColor: "#33BBC5" }}
               variant={""}
-              onClick={() => setActivePage("history")}
+              onClick={() => setActivePage("Salary")}
             >
-              History Work
+              Salary
             </Button>
           )}
         </Stack>

@@ -47,7 +47,7 @@ export default function RegistrasiEmployee() {
   const dispatch = useDispatch();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { role } = useSelector((state) => state.AuthReducer);
-  // console.log("apakah masuk?", role);
+
 
   const formik = useFormik({
     initialValues: {
@@ -57,7 +57,6 @@ export default function RegistrasiEmployee() {
     },
     validationSchema: employeeSchema,
     onSubmit: (values) => {
-      console.log("apakah masuk?");
       dispatch(registEmployee(values, setLoading));
     },
   });

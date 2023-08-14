@@ -65,9 +65,6 @@ const HistoryController = {
           respon.daySalary = users.daySalary / 2;
           respon.cuts = users.daySalary / 2;
         }
-        // await respon.save()
-        console.log("Hours work", workTimeHours);
-        console.log("Day Salary", respon.daySalary);
         respon.isDone = true;
         await respon.save(), { transaction: t };
         return res

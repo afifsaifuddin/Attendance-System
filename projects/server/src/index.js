@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const { join } = require("path");
 const db = require("../models");
-const { authRouter, HistroryRouter, salaryRouter } = require("./Routes");
+const { authRouter, HistroryRouter } = require("./Routes");
 
 // db.sequelize.sync({ alter: true });
 
@@ -27,7 +27,6 @@ app.use(express.json());
 // });
 app.use("/api/auth-management", authRouter);
 app.use("/api/attendence", HistroryRouter);
-app.use("/api/employee", salaryRouter);
 
 app.get("/api", (req, res) => {
   res.send(`Hello, this is my API`);
